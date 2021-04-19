@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/slate/bootstrap.min.css" integrity="sha384-8iuq0iaMHpnH2vSyvZMSIqQuUnQA7QM+f6srIdlgBrTSEyd//AWNMyEaSF2yPzNQ" crossorigin="anonymous">    </head>
+<body>
+<div class = "container">
+     <div class="col-md-6">
+            <form method="POST" action="/calculator/aliments">
+                <label for="name">Name</label>
+                <input class="form-control" id="name" name="name">
+                <label for="calories">Calories</label>
+                <input class="form-control" id="calories" name="calories" type="number" min="1"><br>
+                <button type="submit" class="btn btn-primary">Add</button>
+            </form>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <table class="table table-hover">
+              <thead>
+                <tr>
+                  <th scope="col">row</th>
+                  <th scope="col">Name</th>
+                  <th scope="col">Calories</th>
+                  <th scope="col"></th>
+                </tr>
+              </thead>
+              <tbody>
+                {{#payload}}
+                <tr class="table-primary">
+                    <td>{{rowid}}</td>
+                    <td>{{name}}</td>
+                    <td>{{calories}}</td>
+                    <td><a href="/calculator/aliments/delete/{{rowid}}" class="btn btn-danger">delete</a></td>
+                </tr>
+                {{/payload}}
+              </tbody>
+            </table><br>
+        </div>
+    </div>
+   
+</div>
+</body>
+</html>
+
+</body>
+</html>
